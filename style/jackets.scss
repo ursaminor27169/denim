@@ -314,7 +314,6 @@ header {
 main {
     @include container(4%);
     margin-top: 25px;
-    margin-bottom: 65px;
     .filter-container {
         width: 100%;
         display: flex;
@@ -415,162 +414,6 @@ main {
                             margin-bottom: 20px;
                         }
                     }
-                    &-color {
-                        .color-none {
-                            display: none;
-                        }
-                        &-set {
-                            display: flex;
-                            flex-direction: row;
-                            margin-bottom: 35px;
-                            flex-wrap: wrap;
-                            &__unit {
-                                display: block;
-                                border-radius: 50px;
-                                background-color: rgb(30, 192, 224);
-                                width: 16px;
-                                height: 16px;
-                                margin-right: 30px;
-                                cursor: pointer;
-                                &:hover {
-                                    transform: scale(1.05);
-                                    transition-duration: 0.3s;
-                                }
-                                &_first {
-                                    background-color: map-get($map: $colors, $key: colors-for-circle_first);
-                                    &:hover {
-                                        box-shadow: 
-                                        0 0 0px 1px white,
-                                        0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_first);
-                                    }
-                                    &_click {
-                                        transform: scale(1.05);
-                                        transition-duration: 0.3s;
-                                        box-shadow: 
-                                        0 0 0px 3px white,
-                                        0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_first);
-                                    }
-                                }
-                                &_second {
-                                    background-color: map-get($map: $colors, $key: colors-for-circle_second);
-                                    &:hover {
-                                        box-shadow: 
-                                        0 0 0px 1px white,
-                                        0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_second);
-                                    }
-                                    &_click {
-                                        transform: scale(1.05);
-                                        transition-duration: 0.3s;
-                                        box-shadow: 
-                                        0 0 0px 3px white,
-                                        0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_second);
-                                    }
-                                }
-                                &_third {
-                                    background-color: map-get($map: $colors, $key: colors-for-circle_third);
-                                    &:hover {
-                                        box-shadow: 
-                                        0 0 0px 1px white,
-                                        0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_third);
-                                    }
-                                    &_click {
-                                        transform: scale(1.05);
-                                        transition-duration: 0.3s;
-                                        box-shadow: 
-                                        0 0 0px 3px white,
-                                        0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_third);
-                                    }
-                                }
-                                &_fourth {
-                                    background-color: map-get($map: $colors, $key: colors-for-circle_fourth);
-                                    &:hover {
-                                        box-shadow: 
-                                        0 0 0px 1px white,
-                                        0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_fourth);
-                                    }
-                                    &_click {
-                                        transform: scale(1.05);
-                                        transition-duration: 0.3s;
-                                        box-shadow: 
-                                        0 0 0px 3px white,
-                                        0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_fourth);
-                                    }
-                                }
-                                &_fifth {
-                                    background-color: map-get($map: $colors, $key: colors-for-circle_fifth);
-                                    &:hover {
-                                        box-shadow: 
-                                        0 0 0px 1px white,
-                                        0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_fifth);
-                                    }
-                                    &_click {
-                                        transform: scale(1.05);
-                                        transition-duration: 0.3s;
-                                        box-shadow: 
-                                        0 0 0px 3px white,
-                                        0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_fifth);
-                                    }
-                                }
-                                &_sixth {
-                                    background-color: map-get($map: $colors, $key: colors-for-circle_sixth);
-                                    &:hover {
-                                        box-shadow: 
-                                        0 0 0px 1px white,
-                                        0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_sixth);
-                                    }
-                                    &_click {
-                                        transform: scale(1.05);
-                                        transition-duration: 0.3s;
-                                        box-shadow: 
-                                        0 0 0px 3px white,
-                                        0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_sixth);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    &-collection {
-                        .collection-none {
-                            display: none;
-                        }
-                        &-set {
-                            width: 100%;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            margin-bottom: 20px;
-                            flex-wrap: wrap;
-                            &__unit {
-                                margin-right: 30px;
-                                &:hover .filter-characteristics-collection-set__link::after {
-                                    width: 100%;
-                                    transition-duration: 0.3s;
-                                }
-                                &_active {
-                                    &:hover .filter-characteristics-collection-set__link_active::after {
-                                        width: 0;
-                                    }
-                                }
-                            }
-                            &__link {
-                                color: map-get($map: $colors, $key: text-gray);
-                                @include font-styles(500, 14px);
-                                position: relative;
-                                &::after {
-                                    content: '';
-                                    background-color: map-get($map: $colors, $key: text-gray);
-                                    width: 0%;
-                                    height: 1px;
-                                    position: absolute;
-                                    top: 17px;
-                                    left: 0;
-                                }
-                                &_active {
-                                    color: map-get($map: $colors, $key: text-black);
-                                }
-                            }
-                        }
-                    }
                     &-cont {
                         display: flex;
                         flex-direction: row;
@@ -607,24 +450,13 @@ main {
     .assortments {
         margin-top: 30px;
         width: 100%;
-        display: grid;
-        grid-template-areas: 
-            "j1 j2"
-            "j3 j4"
-            "jb jb"
-            "jb jb"
-            "j5 j6"
-            "j7 j8";
-        row-gap: 10px;
-        column-gap: 10px;
-        &-flex {
-            display: flex;
+        display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             .assortments-unit {
                 width: 40%;
+                margin-top: 20px;
             }
-        }
         &-none {
             display: none;
         }
@@ -634,12 +466,6 @@ main {
             padding: 5px;
             &__image {
                 width: 100%;
-                &_to1100px {
-                    display: none;
-                }
-                &_from1100px {
-                    display: none;
-                }
             }
             &__name {
                 @include font-styles(500, 16px);
@@ -658,63 +484,30 @@ main {
             }
         }
     }
+    .all-products {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        &__name {
+            @include font-styles(500, 16px);
+            color: map-get($map: $colors, $key: text-gray);
+        }
+    }
     .no-products {
         width: 100%;
         display: none;
         justify-content: center;
         align-items: center;
         height: 200px;
-        & h1 {
+        &__name {
             @include font-styles(600, 20px);
             color: map-get($map: $colors, $key: text-gray);
         }
         &-show {
             display: flex;
-        }
-    }
-    .load-more {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 40px;
-        &__name {
-            @include font-styles(400, 18px);
-            position: relative;
-            &::before {
-                content: '';
-                background-color: map-get($map: $colors, $key: line-gray);
-                width: 100%;
-                height: 2px;
-                position: absolute;
-                top: 25px;
-                left: 0;
-            }
-            &_line {
-                background-color: map-get($map: $colors, $key: text-black);
-                width: 39px;
-                height: 2px;
-                position: relative;
-                top: 4px;
-                left: -80px;
-            }
-        }
-        &__button {
-            @include font-styles(600, 16px);
-            display: block;
-            margin-top: 30px;
-            height: 64px;
-            width: 204px;
-            background-color: #151C22;
-            color: white;
-            text-align: center;
-            line-height: 64px;
-            &:hover {
-                box-shadow: 
-                0 0 0px 3px map-get($colors, background-lightgray),
-                0 0 0px 4px rgb(0, 0, 0);
-                transition-duration: 0.3s;
-            }
         }
     }
 }
@@ -795,15 +588,6 @@ main {
     }
 }
 
-@media (min-width: 900px) {
-    .assortments-unit__image_to900px {
-        display: none !important;
-    }
-    .assortments-unit__image_to1100px {
-        display: block !important;
-    }
-}
-
 @media (min-width: 768px) {
     header {
         .menu {
@@ -848,7 +632,6 @@ main {
         }
     }
     main {
-        margin-bottom: 100px;
         .filter-container {
             justify-content: flex-end;
             .filter {
@@ -940,18 +723,9 @@ main {
             }
         }
         .assortments {
-            column-gap: 20px;
-            row-gap: 30px;
-            grid-template-areas: 
-                "j1 j2 j3" 
-                "j4 jb jb"
-                "j5 jb jb"
-                "j6 j7 j8";
-            &-flex {
-                justify-content: space-around;
-                .assortments-unit {
-                    width: 27%;
-                }
+            justify-content: space-around;
+            .assortments-unit {
+                width: 27%;
             }
         }
         .no-products {
@@ -1009,24 +783,6 @@ main {
 }
 @media (min-width: 1100px) {
     main {
-        margin-bottom: 130px;
-        .assortments {
-            column-gap: 65px;
-            row-gap: 40px;
-            grid-template-areas: 
-            "j1 j2 j3 j4"
-            "j5 j6 jb jb"
-            "j7 j8 jb jb";
-            .assortments-unit__image_to900px {
-                display: none !important;
-            }
-            .assortments-unit__image_to1100px {
-                display: none !important;
-            }
-            .assortments-unit__image_from1100px {
-                display: block !important;
-            }
-        }
         .load-more {
             margin-top: 60px;
         }

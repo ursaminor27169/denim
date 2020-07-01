@@ -63,25 +63,43 @@ main {
         color: #151C22; }
         main .bread-crumb__link_active::after {
           display: none; }
-  main .main__name {
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px; }
-    main .main__name:hover .main__name_link::after {
-      width: 100%;
-      transition-duration: 0.3s; }
-    main .main__name_link {
-      font-weight: 500;
-      font-size: 26px;
-      position: relative; }
-      main .main__name_link::after {
-        content: '';
-        background-color: #151C22;
-        width: 0%;
-        height: 2px;
+  main .catalog {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 70px 250px; }
+    main .catalog-item {
+      display: block; }
+      main .catalog-item-main {
+        z-index: 10;
         position: absolute;
-        top: 27px;
-        left: 0; }
+        transform: translate(0px, 0px);
+        width: 250px;
+        height: 320px;
+        background-color: white;
+        border: 1px solid black;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 0 13px 0; }
+        main .catalog-item-main__img {
+          width: 90%; }
+        main .catalog-item-main__name {
+          font-weight: 500;
+          font-size: 26px; }
+        main .catalog-item-main:hover {
+          transform: translate(-10px, -10px); }
+      main .catalog-item__add {
+        z-index: 0;
+        position: relative;
+        width: 250px;
+        height: 320px;
+        background-color: white;
+        border: 1px solid black; }
 
 footer {
   background-color: #151C22;
@@ -163,5 +181,3 @@ footer {
       footer .sections__unit_contacts {
         display: flex;
         justify-content: center; } }
-
-/*# sourceMappingURL=woman.css.map */

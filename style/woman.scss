@@ -69,25 +69,49 @@ main {
             }
         }
     }
-    .main__name {
-        text-align: center;
-        margin-top: 100px;
-        margin-bottom: 100px;
-        &:hover .main__name_link::after {
-            width: 100%;
-            transition-duration: 0.3s;
-        }
-        &_link {
-            @include font-styles(500, 26px);
-            position: relative;
-            &::after {
-                content: '';
-                background-color: map-get($map: $colors, $key: text-black);
-                width: 0%;
-                height: 2px;
+    .catalog {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 70px 250px;
+        &-item {
+            display: block;
+            &-main {
+                z-index: 10;
                 position: absolute;
-                top: 27px;
-                left: 0;
+                transform: translate(0px, 0px);
+                width: 250px;
+                height: 320px;
+                background-color: white;
+                border: 1px solid black;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                padding: 13px 0 13px 0;
+                &__img {
+                    width: 90%;
+                }
+                &__name {
+                    font-weight: 500;
+                    font-size: 26px;
+                }
+                &:hover {
+                    transform: translate(-10px, -10px);
+                }
+            }
+            &__add {
+                z-index: 0;
+                position: relative;
+                // top: 10px;
+                // left: 10px;
+                width: 250px;
+                height: 320px;
+                background-color: white;
+                border: 1px solid black;
             }
         }
     }
