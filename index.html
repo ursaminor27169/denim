@@ -9,9 +9,9 @@
 </head>
 <body>
     <header class="header">
-        <div class="logo">
+        <a href="index.html" class="logo">
             Nimes
-        </div>
+        </a>
         <div class="menu">
             <ul class="catalog">
                 <li class="catalog__unit"><a class="catalog__link" href="./woman.html">Woman</a></li>
@@ -131,10 +131,29 @@
                 </a>
             </div>
         </div>
+        <div class="feedback">
+            <div class="feedback-title">
+                <h2 class="feedback-title__name">Leave a feedback</h2>
+            </div>
+            <div class="feedback-text feedback-text_none">
+                <p class="feedback-text__title">Your feedback:</p>
+                <p class="feedback-text__review"></p>
+                <div class="feedback-text-change">
+                    <p>You may:</p>
+                    <a href="#" class="feedback-text-change__unit feedback-text-change__unit-redact">Redact</a>
+                    <a href="#" class="feedback-text-change__unit feedback-text-change__unit-delete">Delete</a>
+                </div>
+            </div>
+            <form class="feedback-form">
+                <label for="feedback" class="feedback-form__label">Enter you feedback here:</label>
+                <textarea class="feedback-form__input" name="u feedback" id="feedback" cols="41" rows="4"></textarea>
+            </form>
+            <a href="#" class="feedback__button">Send</a>
+        </div>
     </main>
     <footer class="footer">
         <div class="sections">
-            <h2 class="sections__name">Nimes</h2>
+            <a href="index.html" class="sections__name">Nimes</a>
             <a href="./index.html" class="sections__unit_shop">Shop</a>
             <a href="./index.html" class="sections__unit_delivery">Delivery</a>
             <a href="./index.html" class="sections__unit_service">Service</a>
@@ -164,5 +183,6 @@
             </a>
         </div>
     </footer>
+<script src="./scripts/feedback.js"></script>
 </body>
 </html>

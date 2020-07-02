@@ -291,6 +291,93 @@ main {
             }
         }
     }
+    .feedback {
+        margin: 50px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-title {
+            width: 100%;
+            margin-bottom: 30px;
+            &__name {
+                @include font-styles(bold, 26px);
+            }
+        }
+        &-text {
+            width: 90%;
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            background-color: map-get($colors, background-lightgray);
+            overflow-x: hidden;
+            &_none {
+                display: none;
+            }
+            &__title {
+                @include font-styles(500, 20px);
+                margin-bottom: 30px;
+            }
+            &__review {
+                @include font-styles(400, 18px);
+            }
+            &-change {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                margin-top: 30px;
+                &__unit {
+                    position: relative;
+                    &::after {
+                        content: '';
+                        background-color: #151C22;
+                        width: 0%;
+                        height: 1px;
+                        position: absolute;
+                        top: 20px;
+                        left: 0;
+                    }
+                    &:hover::after {
+                        width: 100%;
+                        transition-duration: 0.3s;
+                    }
+                }
+            }
+        }
+        &-form {
+            width: 90%;
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            &__label {
+                @include font-styles(500, 20px);
+                margin-bottom: 20px;
+            }
+            &__input {
+                width: 100%;
+                padding: 10px;
+                @include font-styles(300, 16px);
+            }
+        }
+        &__button {
+            @include font-styles(600, 16px);
+            display: block;
+            height: 64px;
+            width: 80%;
+            background-color: #151C22;
+            color: white;
+            text-align: center;
+            line-height: 64px;
+            &:hover {
+                box-shadow: 
+                0 0 0px 3px map-get($colors, background-lightgray),
+                0 0 0px 4px rgb(0, 0, 0);
+                transition-duration: 0.3s;
+            }
+        }
+    }
 }
 .footer {
     background-color: #151C22;
@@ -312,6 +399,7 @@ main {
             display: flex;
             color: white;
             grid-area: nimes;
+            @include font-styles(800, 24px);
         }
         &__unit {
             &_shop {
@@ -541,6 +629,26 @@ main {
                     width: 148px;
                     @include font-styles(bold, 16px)
                 }
+            }
+        }
+        .feedback {
+            margin: 80px 0;
+            &-title {
+                margin-bottom: 50px;
+                &__name {
+                    @include font-styles(bold, 34px);
+                }
+            }
+            &-text {
+                width: 450px;
+                padding: 20px;
+            }
+            &-form {
+                width: 450px;
+                padding: 20px;
+            }
+            &__button {
+                width: 400px;
             }
         }
     }

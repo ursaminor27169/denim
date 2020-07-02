@@ -245,6 +245,81 @@ main {
         main .banner-main__button:hover {
           box-shadow: 0 0 0px 3px #F1F2F4, 0 0 0px 4px black;
           transition-duration: 0.3s; }
+  main .feedback {
+    margin: 50px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    main .feedback-title {
+      width: 100%;
+      margin-bottom: 30px; }
+      main .feedback-title__name {
+        font-weight: bold;
+        font-size: 26px; }
+    main .feedback-text {
+      width: 90%;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      background-color: #F1F2F4;
+      overflow-x: hidden; }
+      main .feedback-text_none {
+        display: none; }
+      main .feedback-text__title {
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 30px; }
+      main .feedback-text__review {
+        font-weight: 400;
+        font-size: 18px; }
+      main .feedback-text-change {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px; }
+        main .feedback-text-change__unit {
+          position: relative; }
+          main .feedback-text-change__unit::after {
+            content: '';
+            background-color: #151C22;
+            width: 0%;
+            height: 1px;
+            position: absolute;
+            top: 20px;
+            left: 0; }
+          main .feedback-text-change__unit:hover::after {
+            width: 100%;
+            transition-duration: 0.3s; }
+    main .feedback-form {
+      width: 90%;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: start; }
+      main .feedback-form__label {
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 20px; }
+      main .feedback-form__input {
+        width: 100%;
+        padding: 10px;
+        font-weight: 300;
+        font-size: 16px; }
+    main .feedback__button {
+      font-weight: 600;
+      font-size: 16px;
+      display: block;
+      height: 64px;
+      width: 80%;
+      background-color: #151C22;
+      color: white;
+      text-align: center;
+      line-height: 64px; }
+      main .feedback__button:hover {
+        box-shadow: 0 0 0px 3px #F1F2F4, 0 0 0px 4px black;
+        transition-duration: 0.3s; }
 
 .footer {
   background-color: #151C22;
@@ -262,7 +337,9 @@ main {
     .footer .sections__name {
       display: flex;
       color: white;
-      grid-area: nimes; }
+      grid-area: nimes;
+      font-weight: 800;
+      font-size: 24px; }
     .footer .sections__unit_shop {
       display: flex;
       color: white;
@@ -433,6 +510,21 @@ main {
           width: 148px;
           font-weight: bold;
           font-size: 16px; }
+    main .feedback {
+      margin: 80px 0; }
+      main .feedback-title {
+        margin-bottom: 50px; }
+        main .feedback-title__name {
+          font-weight: bold;
+          font-size: 34px; }
+      main .feedback-text {
+        width: 450px;
+        padding: 20px; }
+      main .feedback-form {
+        width: 450px;
+        padding: 20px; }
+      main .feedback__button {
+        width: 400px; }
 
   .footer {
     align-items: center; }
