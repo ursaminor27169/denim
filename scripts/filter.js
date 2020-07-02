@@ -24,6 +24,7 @@ var assortmentsThree = document.querySelectorAll('.assortments-three');
 var assortmentsFour = document.querySelectorAll('.assortments-four');
 var numberOfElements = document.querySelector('.load-more__name_number');
 var lineOfLoad = document.querySelector('.load-more__name_line');
+var numberOfItems = document.querySelector('.all-products__name-number');
 
 //открытие-закрытие фильтра
 
@@ -91,7 +92,7 @@ var showNoProducts = function() {
             sumAssortmentsNone++
         }
     }
-    if (sumAssortmentsNone == 9) {
+    if (sumAssortmentsNone == numberOfItems.textContent) {
         noProducts.classList.add('no-products-show');
     } else {
         noProducts.classList.remove('no-products-show');

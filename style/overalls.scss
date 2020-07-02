@@ -252,11 +252,10 @@ header {
 }
 main {
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 60px;
     .product {
         display: flex;
         flex-direction: column;
+        margin-top: 20px;
         margin-bottom: 40px;
         .photos {
             width: 100%;
@@ -264,63 +263,15 @@ main {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin-bottom: 40px;
-            .left-arrow {
-                width: 12%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                &__icon {
-                    cursor: pointer;
-                    &:hover {
-                        transform: scale(1.3);
-                        transition-duration: 0.2s;
-                    }
-                }
-            }
             .slider {
-                &-main-photo {
-                    width: 244px;
-                    height: 310px;
-                    &__image {
-                        width: 244px;
-                        height: 310px;
-                    }
-                }
-                &-other-photos {
-                    width: 400px;
-                    display: none;
-                    grid-template-areas: 
-                        "o1 o2 o3 o4";
-                    column-gap: 20px;
-                    &__unit {
-                        width: 85px;
-                        height: 113px;
-                        &:hover {
-                            transform: scale(1.05);
-                            box-shadow: 
-                            0 0 0px 4px white,
-                            0 0 0px 5px rgb(0, 0, 0);
-                            transition-duration: 0.3s;
-                        }
-                    }
-                    &__image {
-                        width: 85px;
-                        height: 113px;
-                    }
-                    
-                }
-            }
-            .right-arrow {
-                width: 12%;
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                &__icon {
-                    cursor: pointer;
-                    &:hover {
-                        transform: scale(1.3);
-                        transition-duration: 0.2s;
+                align-items: start;
+                &-main-photo {
+                    width: 90%;
+                    &__image {
+                        width: 100%;
+                        vertical-align: bottom;
                     }
                 }
             }
@@ -329,6 +280,7 @@ main {
             background-color: map-get($map: $colors, $key: background-lightgray);
             width: 100%;
             padding: 40px 0 40px 5%;
+            box-sizing: border-box;
             &__name {
                 @include font-styles(bold, 26px);
                 margin-bottom: 35px;
@@ -362,13 +314,27 @@ main {
                             background-color: map-get($map: $colors, $key: colors-for-circle_first);
                             &:hover {
                                 box-shadow: 
-                            0 0 0px 3px map-get($map: $colors, $key: background-lightgray),
-                            0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_first);
+                                0 0 0px 1px map-get($map: $colors, $key: background-lightgray),
+                                0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_first);
+                            }
+                            &_click {
+                                transform: scale(1.05);
+                                transition-duration: 0.3s;
+                                box-shadow: 
+                                0 0 0px 3px map-get($map: $colors, $key: background-lightgray),
+                                0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_first);
                             }
                         }
                         &_second {
                             background-color: map-get($map: $colors, $key: colors-for-circle_second);
                             &:hover {
+                                box-shadow: 
+                                0 0 0px 1px map-get($map: $colors, $key: background-lightgray),
+                                0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_second);
+                            }
+                            &_click {
+                                transform: scale(1.05);
+                                transition-duration: 0.3s;
                                 box-shadow: 
                                 0 0 0px 3px map-get($map: $colors, $key: background-lightgray),
                                 0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_second);
@@ -377,6 +343,13 @@ main {
                         &_third {
                             background-color: map-get($map: $colors, $key: colors-for-circle_third);
                             &:hover {
+                                box-shadow: 
+                                0 0 0px 1px map-get($map: $colors, $key: background-lightgray),
+                                0 0 0px 2px map-get($map: $colors, $key: colors-for-circle_third);
+                            }
+                            &_click {
+                                transform: scale(1.05);
+                                transition-duration: 0.3s;
                                 box-shadow: 
                                 0 0 0px 3px map-get($map: $colors, $key: background-lightgray),
                                 0 0 0px 4px map-get($map: $colors, $key: colors-for-circle_third);
@@ -437,6 +410,7 @@ main {
                 color: white;
                 text-align: center;
                 line-height: 64px;
+                cursor: pointer;
                 &:hover {
                     box-shadow: 
                     0 0 0px 3px map-get($colors, background-lightgray),
@@ -548,6 +522,7 @@ main {
             display: flex;
             color: white;
             grid-area: nimes;
+            @include font-styles(800, 24px);
         }
         &__unit {
             &_shop {
@@ -605,7 +580,7 @@ main {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 785px) {
     header {
         .menu {
             margin-top: 0;
@@ -624,90 +599,58 @@ main {
         }
     }
     main {
-        margin-top: 50px;
         .product {
-            margin-bottom: 130px;
             flex-direction: row;
-            margin-bottom: 65px;
             .photos {
-                width: 50%;
+                width: 45%;
                 margin-left: 5%;
-                margin-bottom: 0;
-                .left-arrow {
-                    width: 20%;
-                    &__icon {
-                        width: 0;
-                    }
-                }
                 .slider {
                     &-main-photo {
                         width: 100%;
                         height: auto;
-                        margin-bottom: 20px;
                         &__image {
                             width: 100%;
                             height: auto;
+                            vertical-align: bottom;
                         }
-                    }
-                    &-other-photos {
-                        display: grid;
-                        grid-template-areas: 
-                            "o1 o2"
-                            "o3 o4";
-                        width: 100%;
-                        row-gap: 25px;
-                        column-gap: 25px;
-                        &__unit {
-                            width: 100%;
-                            overflow: hidden;
-                        }
-                        &__image {
-                            width: 100%;
-                            height: auto;
-                        }
-                    }
-                }
-                .right-arrow {
-                    width: 20%;
-                    &__icon {
-                        width: 0;
                     }
                 }
             }
             .characteristic {
-                width: 50%;
-                padding: 50px 0 50px 50px;                
+                width: 45%;
+                margin-right: 5%;
+                padding: 30px 0 20px 30px;                
                 &__name {
                     @include font-styles(bold, 28px);
-                    margin-bottom: 40px;
+                    margin-bottom: 20px;
                 }
                 &__caption {
                     @include font-styles(400, 14px);
-                    width: 87%;
-                    margin-bottom: 50px;
+                    width: 90%;
+                    margin-bottom: 20px;
                 }
                 .colors {
                     &__name {
                         @include font-styles(medium, 18px);
-                        margin-bottom: 25px;
+                        margin-bottom: 10px;
                     }
                     &-set {
-                        margin-bottom: 40px;
+                        margin-bottom: 20px;
                     }
                 }
                 .sizes {
                     &__name {
                         @include font-styles(medium, 18px);
-                        margin-bottom: 25px;
+                        margin-bottom: 10px;
                     }
                     &-set {
-                        margin-bottom: 40px;
+                        margin-bottom: 20px;
                         &__unit {
                             margin-right: 20px;
                         }
                     }
                     &__button {
-                        margin-top: 50px;
+                        margin-top: 20px;
                     }
                 }
             }
@@ -781,30 +724,8 @@ main {
 
 @media (min-width: 1100px) {
     main {
-        margin-bottom: 130px;
         .product {
-            margin-bottom: 130px;
-            .photos {
-                .left-arrow {
-                    &__icon {
-                        width: auto;
-                    }
-                }
-                .slider {
-                    &-other-photos {
-                        grid-template-areas:
-                            "o1 o2 o3 o4";
-                        column-gap: 20px;
-                    }
-                }
-                .right-arrow {
-                    &__icon {
-                        width: auto;
-                    }
-                }
-            }
             .characteristic {
-                padding: 70px 0 70px 73px;
                 &__name {
                     @include font-styles(bold, 32px);
                 }

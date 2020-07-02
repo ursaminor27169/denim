@@ -414,7 +414,9 @@ main {
     .footer .sections__name {
       display: flex;
       color: white;
-      grid-area: nimes; }
+      grid-area: nimes;
+      font-weight: 800;
+      font-size: 24px; }
     .footer .sections__unit_shop {
       display: flex;
       color: white;

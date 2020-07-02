@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/overalls.css">
+    <link rel="stylesheet" href="style/jackets.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <title>Denim - Overalls</title>
 </head>
@@ -17,12 +17,12 @@
             </div>
             <ul class="catalog">
                 <li class="catalog__unit"><a class="catalog__link" href="./woman.html">Woman</a></li>
-                <li class="catalog__unit"><a class="catalog__link" href="./woman.html">Man</a></li>
-                <li class="catalog__unit"><a class="catalog__link" href="./woman.html">New</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="./man.html">Man</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="./new.html">New</a></li>
             </ul>
-            <div class="logo">
+            <a href="index.html" class="logo">
                 Nimes
-            </div>
+            </a>
             <ul class="purchases">
                 <li class="purchases__unit"><a class="purchases__link" href="#">
                     <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,108 +36,131 @@
                 </a></li>
             </ul>
         </div>
-    </header>
-    <main>
-        <div class="product">
-            <div class="photos">
-                <div class="left-arrow">
-                    <svg class="left-arrow__icon" width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 1L2 11.5L12 22" stroke="#151C22" stroke-width="2"/>
-                    </svg>
-                </div>
-                <div class="slider">
-                    <div class="slider-main-photo">
-                        <img src="./img/overalls1.jpg" alt="main photo" class="slider-main-photo__image">
-                    </div>
-                    <div class="slider-other-photos">
-                        <a href="#" class="slider-other-photos__unit" style="grid-area: o1;"><img src="./img/overalls2.jpg" alt="another photo" class="slider-other-photos__image"></a>
-                        <a href="#" class="slider-other-photos__unit" style="grid-area: o2;"><img src="./img/overalls3.jpg" alt="another photo" class="slider-other-photos__image"></a>
-                        <a href="#" class="slider-other-photos__unit" style="grid-area: o3;"><img src="./img/overalls4.jpg" alt="another photo" class="slider-other-photos__image"></a>
-                        <a href="#" class="slider-other-photos__unit" style="grid-area: o4;"><img src="./img/overalls5.jpg" alt="another photo" class="slider-other-photos__image"></a>
-                    </div>
-                </div>
-                <div class="right-arrow">
-                    <svg class="right-arrow__icon" width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 22L11 11.5L1 1" stroke="#151C22" stroke-width="2"/>
-                    </svg>    
-                </div>
+        <div class="main">
+            <div class="title">
+                <ul class="bread-crumb">
+                    <li class="bread-crumb__unit bread-crumb__unit_delete"><a href="./index.html" class="bread-crumb__link">All categories</a></li>
+                    <li class="bread-crumb__unit bread-crumb__unit_delete">/</li>
+                    <li class="bread-crumb__unit"><a href="./woman.html" class="bread-crumb__link">Woman</a></li>
+                    <li class="bread-crumb__unit">/</li>
+                    <li class="bread-crumb__unit"><a href="#" class="bread-crumb__link bread-crumb__link_active">Overalls</a></li>
+                </ul>
+                <div class="title__name">Denim Collection</div>
             </div>
-            <div class="characteristic">
-                <h2 class="characteristic__name">
-                    Overalls
-                </h2>
-                <p class="characteristic__caption">
-                    Overalls in washed organic cotton denim. Collar, button fly, and adjustable belt at waist. Chest pockets with flap. Long, gently flared sleeves and straight legs with front pockets and back pockets.
-                </p>
-                <div class="colors">
-                    <h3 class="colors__name">
-                        Color
-                    </h3>
-                    <div class="colors-set">
-                        <a href="#" class="colors-set__unit colors-set__unit_first"></a>
-                        <a href="#" class="colors-set__unit colors-set__unit_second"></a>
-                        <a href="#" class="colors-set__unit colors-set__unit_third"></a>
-                    </div>
-                </div>
-                <div class="sizes">
-                    <h3 class="sizes__name">
-                        Size
-                    </h3>
-                    <ul class="sizes-set">
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link">XS</a></li>
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_active">S</a></li>
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link">M</a></li>
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link">L</a></li>
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link">XL</a></li>
-                    </ul>
-                </div>
-                <p class="characteristic__price">
-                    $ 160
-                </p>
-                <a class="characteristic__button">
-                    Add to cart
-                </a>
+            <div class="philosophy">
+                <img src="./img/philosophy.jpg" alt="надпись we see what we want" class="philosophy__image">
             </div>
         </div>
-        <div class="also-like">
-            <div class="also-like-title">
-                <h2 class="also-like-title__name">You may also like</h2>
-                <a href="./jackets.html" class="also-like-title__button">
-                    View all
-                </a>
+    </header>
+    <main>
+        <div class="filter-container">
+            <div class="filter">
+                <p class="filter__name">Filter by</p>
+                <svg class="filter__tick" width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L9 9L17 1" stroke="#151C22" stroke-width="2"/>
+                </svg>                    
             </div>
-            <div class="also-like-variants">
-                <a href="./overalls.html" class="also-like-variants-unit" style="grid-area: o1;">
-                    <img src="./img/also-like1.jpg" alt="jacket" class="also-like-variants-unit__image">
-                    <p class="also-like-variants-unit__name">Overalls</p>
-                    <p class="also-like-variants-unit__price">$ 140</p>
+            <div class="filter-cont">
+                <ul class="filter-nav">
+                    <li class="filter-nav__unit filter-nav__unit_clear-all"><a href="#" class="filter-nav__link filter-nav__link_clear-all">Clear all</a></li>
+                    <li class="filter-nav__unit filter-nav__unit_name">Filter</li>
+                    <li class="filter-nav__unit filter-nav__unit_close"><a href="#" class="filter-nav__link filter-nav__link_close">Close</a></li>
+                </ul>
+                <div class="filter-characteristics filter-characteristics-price">
+                    <div class="filter-characteristics-cont filter-characteristics-price-cont">
+                        <h3 class="filter-characteristics-cont__name">Price</h3>
+                        <svg class="filter-characteristics-price__tick" width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L9 9L17 1" stroke="#151C22" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="price-inside price-none">
+                        <p class="filter-characteristics-price__description">From</p>
+                        <input class="filter-characteristics-price__range filter-characteristics-price__range_from" type="range" min="0" max="160" step="1" value="40">
+                        <p class="filter-characteristics-price__price">$ <span class="filter-characteristics-price__price_number-from">40</span></p>
+                        <p class="filter-characteristics-price__description">After</p>
+                        <input class="filter-characteristics-price__range filter-characteristics-price__range_to" type="range" min="35" max="250" step="1" value="240">
+                        <p class="filter-characteristics-price__price">$ <span class="filter-characteristics-price__price_number-to">240</span></p>
+                    </div>
+                </div>
+                <a href="#" class="filter__button">
+                    Apply
                 </a>
-                <a href="./overalls.html" class="also-like-variants-unit" style="grid-area: o2;">
-                    <img src="./img/also-like2.jpg" alt="overalls" class="also-like-variants-unit__image">
-                    <p class="also-like-variants-unit__name">Overalls</p>
-                    <p class="also-like-variants-unit__price">$ 110</p>
-                </a>
-                <a href="./overalls.html" class="also-like-variants-unit" style="grid-area: j1;">
-                    <img src="./img/also-like3.jpg" alt="jacket" class="also-like-variants-unit__image">
-                    <p class="also-like-variants-unit__name">Jacket</p>
-                    <p class="also-like-variants-unit__price">$ 70</p>
-                </a>
-                <a href="./overalls.html" class="also-like-variants-unit" style="grid-area: j2;">
-                    <img src="./img/also-like4.jpg" alt="overalls" class="also-like-variants-unit__image">
-                    <p class="also-like-variants-unit__name">Jacket</p>
-                    <p class="also-like-variants-unit__price">$ 60</p>
-                </a>
+                <p class="filter__button-more768px">
+                    <a href="#" class="filter__button-more768px_link">
+                        Clear all
+                    </a>
+                </p>
             </div>
-            <p class="also-like-add">
-                <a href="./jackets.html" class="also-like-add__button">
-                    View all
-                </a>
-            </p>
+        </div>
+        <div class="assortments">
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: j1" data-color="sixth" data-collection="casual">
+                <img src="./img/overalls/1.jpg" alt="girl in jeans" class="assortments-unit__image">
+                <p class="assortments-unit__name">Daring overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">80</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: j2" data-color="third" data-collection="casual">
+                <img src="./img/overalls/2.jpg" alt="girl in jeans" class="assortments-unit__image">
+                <p class="assortments-unit__name">Blue overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">10</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: j3" data-color="first" data-collection="casual">
+                <img src="./img/overalls/3.jpg" alt="girl in jeans" class="assortments-unit__image">
+                <p class="assortments-unit__name">Gentle overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">110</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit assortments-unit_left" style="grid-area: j4" data-color="first" data-collection="petite">
+                <img src="./img/overalls/4.jpg" alt="girl in jeans" class="assortments-unit__image">
+                <p class="assortments-unit__name">Cute overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">245</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit assortments-unit_left assortments-unit_left_second" style="grid-area: j5" data-color="first" data-collection="petite">
+                <img src="./img/overalls/5.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_long-girl">
+                <p class="assortments-unit__name">Lovely overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">70</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: j6" data-color="fifth" data-collection="petite">
+                <img src="./img/overalls/6.jpg" alt="girl in jeans" class="assortments-unit__image">
+                <p class="assortments-unit__name">Spring overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">95</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: j7" data-color="sixth" data-collection="soulluxe">
+                <img src="./img/overalls/7.jpg" alt="girl in jeans" class="assortments-unit__image">
+                <p class="assortments-unit__name">Wow overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">200</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: j8"  data-color="fifth" data-collection="soulluxe">
+                <img src="./img/overalls/8.jpg" alt="girl in jeans" class="assortments-unit__image">
+                <p class="assortments-unit__name">Funny overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">50</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: jb" data-color="second" data-collection="soulluxe">
+                <img src="./img/overalls/9.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_from1100px">
+                <p class="assortments-unit__name">Darkblue overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">35</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: j8"  data-color="fifth" data-collection="soulluxe">
+                <img src="./img/overalls/10.jpg" alt="girl in jeans" class="assortments-unit__image">
+                <p class="assortments-unit__name">Nice overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">65</span></p>
+            </a>
+            <a href="./overalls-item.html" class="assortments-unit" style="grid-area: jb" data-color="second" data-collection="soulluxe">
+                <img src="./img/overalls/11.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_from1100px">
+                <p class="assortments-unit__name">Light overalls</p>
+                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">100</span></p>
+            </a>
+        </div>
+        <div class="no-products">
+            <p class="no-products__name">
+                No appropriate products
+            </з>
+        </div>
+        <div class="all-products">
+            <p class="all-products__name"> Number of products per page initially : 11 </p>
         </div>
     </main>
     <footer class="footer">
         <div class="sections">
-            <h2 class="sections__name">Nimes</h2>
+            <a href="index.html" class="sections__name">Nimes</a>
             <a href="./index.html" class="sections__unit_shop">Shop</a>
             <a href="./index.html" class="sections__unit_delivery">Delivery</a>
             <a href="./index.html" class="sections__unit_service">Service</a>
@@ -168,5 +191,6 @@
         </div>
     </footer>
     <script src="./scripts/burger.js"></script>
+    <script src="./scripts/filter.js"></script>
 </body>
 </html>
