@@ -133,7 +133,7 @@ header .menu {
       header .menu-open .catalog__unit {
         padding: 10px 0; }
       header .menu-open .catalog__link {
-        font-weight: medium;
+        font-weight: 500;
         font-size: 20px; }
     header .menu-open .logo {
       display: none; }

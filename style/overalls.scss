@@ -178,7 +178,7 @@ header {
                     padding: 10px 0;
                 }
                 &__link {
-                    @include font-styles(medium, 20px);
+                    @include font-styles(500, 20px);
                 }
             }
             .logo {
@@ -292,7 +292,7 @@ main {
             }
             .colors {
                 &__name {
-                    @include font-styles(medium, 16px);
+                    @include font-styles(500, 16px);
                     margin-bottom: 25px;
                 }
                 &-set {
@@ -360,7 +360,7 @@ main {
             }
             .sizes {
                 &__name {
-                    @include font-styles(medium, 16px);
+                    @include font-styles(500, 16px);
                     margin-bottom: 25px;
                 }
                 &-set {
@@ -550,7 +550,7 @@ main {
                 }
                 .colors {
                     &__name {
-                        @include font-styles(medium, 18px);
+                        @include font-styles(500, 18px);
                         margin-bottom: 10px;
                     }
                     &-set {
@@ -559,7 +559,7 @@ main {
                 }
                 .sizes {
                     &__name {
-                        @include font-styles(medium, 18px);
+                        @include font-styles(500, 18px);
                         margin-bottom: 10px;
                     }
                     &-set {

@@ -178,7 +178,7 @@ header {
                     padding: 10px 0;
                 }
                 &__link {
-                    @include font-styles(medium, 20px);
+                    @include font-styles(500, 20px);
                 }
             }
             .logo {

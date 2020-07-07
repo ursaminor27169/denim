@@ -136,7 +136,7 @@ header .menu {
       header .menu-open .catalog__unit {
         padding: 10px 0; }
       header .menu-open .catalog__link {
-        font-weight: medium;
+        font-weight: 500;
         font-size: 20px; }
     header .menu-open .logo {
       display: none; }
@@ -228,7 +228,7 @@ main {
         width: 90%;
         margin-bottom: 35px; }
       main .product .characteristic .colors__name {
-        font-weight: medium;
+        font-weight: 500;
         font-size: 16px;
         margin-bottom: 25px; }
       main .product .characteristic .colors-set {
@@ -270,7 +270,7 @@ main {
               transition-duration: 0.3s;
               box-shadow: 0 0 0px 3px #F1F2F4, 0 0 0px 4px #BFC3C8; }
       main .product .characteristic .sizes__name {
-        font-weight: medium;
+        font-weight: 500;
         font-size: 16px;
         margin-bottom: 25px; }
       main .product .characteristic .sizes-set {
@@ -415,13 +415,13 @@ main {
         width: 90%;
         margin-bottom: 20px; }
       main .product .characteristic .colors__name {
-        font-weight: medium;
+        font-weight: 500;
         font-size: 18px;
         margin-bottom: 10px; }
       main .product .characteristic .colors-set {
         margin-bottom: 20px; }
       main .product .characteristic .sizes__name {
-        font-weight: medium;
+        font-weight: 500;
         font-size: 18px;
         margin-bottom: 10px; }
       main .product .characteristic .sizes-set {
