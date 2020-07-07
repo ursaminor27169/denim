@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./wow-animation/animate.min.css">
     <title>Denim</title>
 </head>
 <body>
@@ -54,7 +55,7 @@
         </div>
     </header>
     <main id="main">
-        <div class="bestsellers">
+        <div class="bestsellers wow fadeInUp">
             <div class="bestsellers-title">
                 <h2 class="bestsellers-title__name">Bestsellers</h2>
                 <a href="./bestsellers.html" class="bestsellers-title__button">
@@ -87,7 +88,7 @@
                 View all
             </a>
         </div>
-        <div class="banner">
+        <div class="banner wow fadeInUp">
             <div class="banner-image">
                 <img class="banner-image__img" src="./img/banner-left.jpg" alt="девушка и парень в джинсе">
             </div>
@@ -99,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <div class="bestsellers">
+        <div class="bestsellers wow fadeInUp">
             <div class="bestsellers-title">
                 <h2 class="bestsellers-title__name">Shop by category</h2>
                 <a href="./woman.html" class="bestsellers-title__button">
@@ -131,7 +132,7 @@
                 </a>
             </div>
         </div>
-        <div class="feedback">
+        <div class="feedback wow fadeInUp">
             <div class="feedback-title">
                 <h2 class="feedback-title__name">Leave a feedback</h2>
             </div>
@@ -183,6 +184,10 @@
             </a>
         </div>
     </footer>
-<script src="./scripts/feedback.js"></script>
+    <script src="./scripts/feedback.js"></script>
+    <script src="./wow-animation/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>
