@@ -6,9 +6,33 @@
     <link rel="stylesheet" href="style/jackets.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./wow-animation/animate.min.css">
-    <title>Denim - Bestsellers</title>
+    <title>Denim - Jackets</title>
 </head>
 <body>
+    <?php
+        $host = 'std-mysql';
+        $database = 'std_931';
+        $password = '12345678';
+        $user = 'std_931';
+        $link = mysqli_connect ($host, $user, $password, $database);
+        $result = mysqli_query($link, "SELECT * FROM `jackets`");
+        $number = mysqli_query($link, "SELECT count(id) FROM `jackets`");
+        $ids = [];
+        $titles = [];
+        $imgs = [];
+        $texts = [];
+        $prices = [];
+        $i = 0;
+        while($jackets = mysqli_fetch_assoc($result)) 
+        {
+            $ids[$i] = $jackets['id'];
+            $titles[$i] = $jackets['title'];
+            $imgs[$i] = $jackets['img'];
+            $texts[$i] = $jackets['text'];
+            $prices[$i] = $jackets['price'];
+            $i = $i + 1;
+        }
+    ?>
     <header>
         <div class="menu">
             <div class="burger-cont">
@@ -42,9 +66,9 @@
                 <ul class="bread-crumb">
                     <li class="bread-crumb__unit bread-crumb__unit_delete"><a href="./index.html" class="bread-crumb__link">All categories</a></li>
                     <li class="bread-crumb__unit bread-crumb__unit_delete">/</li>
-                    <li class="bread-crumb__unit"><a href="./new.html" class="bread-crumb__link">New</a></li>
+                    <li class="bread-crumb__unit"><a href="./woman.html" class="bread-crumb__link">Woman</a></li>
                     <li class="bread-crumb__unit">/</li>
-                    <li class="bread-crumb__unit"><a href="#" class="bread-crumb__link bread-crumb__link_active">Bestsellers</a></li>
+                    <li class="bread-crumb__unit"><a href="#" class="bread-crumb__link bread-crumb__link_active">Jackets</a></li>
                 </ul>
                 <div class="title__name">Denim Collection</div>
             </div>
@@ -94,61 +118,18 @@
             </div>
         </div>
         <div class="assortments">
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j1" data-color="sixth" data-collection="casual">
-                <img src="./img/bestsellers/1.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Daring overalls</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">80</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j2" data-color="third" data-collection="casual">
-                <img src="./img/bestsellers/2.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Nice jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">70</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j3" data-color="first" data-collection="casual">
-                <img src="./img/bestsellers/3.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Daring jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">60</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j4" data-color="first" data-collection="petite">
-                <img src="./img/bestsellers/4.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Spring jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">50</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j5" data-color="first" data-collection="petite">
-                <img src="./img/bestsellers/5.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_long-girl">
-                <p class="assortments-unit__name">Funny jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">40</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j6" data-color="fifth" data-collection="petite">
-                <img src="./img/bestsellers/6.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Light jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">110</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j7" data-color="sixth" data-collection="soulluxe">
-                <img src="./img/bestsellers/7.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Wow jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">85</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j8"  data-color="fifth" data-collection="soulluxe">
-                <img src="./img/bestsellers/8.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Cool jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">95</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: jb" data-color="second" data-collection="soulluxe">
-                <img src="./img/bestsellers/9.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_from1100px">
-                <p class="assortments-unit__name">Gentle overalls</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">110</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j8"  data-color="fifth" data-collection="soulluxe">
-                <img src="./img/bestsellers/10.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Family jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">55</span></p>
-            </a>
-            <a href="./bestsellers-item.html" class="assortments-unit wow fadeInUp" style="grid-area: jb" data-color="second" data-collection="soulluxe">
-                <img src="./img/bestsellers/11.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_from1100px">
-                <p class="assortments-unit__name">Lovely overalls</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">70</span></p>
-            </a>
+            <?php
+                $i = 0;
+                while ($i < count($titles)) {
+                    echo
+                    '<a href="./jackets-item.php/?id='. $ids[$i] .'" class="assortments-unit wow fadeInUp">
+                        <img src="' . $imgs[$i] . '" alt="girl in jeans" class="assortments-unit__image">
+                        <p class="assortments-unit__name"> ' . $titles[$i] . ' </p>
+                        <p class="assortments-unit__price">$ <span class="assortments-unit__price_number"> ' . $prices[$i] . ' </span></p>
+                    </a>';
+                    $i = $i + 1;
+                }
+            ?>
         </div>
         <div class="no-products">
             <p class="no-products__name">
@@ -156,7 +137,7 @@
             </p>
         </div>
         <div class="all-products">
-            <p class="all-products__name"> Number of products per page initially : 11 </p>
+            <p class="all-products__name"> Number of products per page initially : <?php echo count($ids) ?> </p>
         </div>
     </main>
     <footer class="footer">

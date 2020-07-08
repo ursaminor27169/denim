@@ -9,6 +9,30 @@
     <title>Denim - Jeans</title>
 </head>
 <body>
+    <?php
+        $host = 'std-mysql';
+        $database = 'std_931';
+        $password = '12345678';
+        $user = 'std_931';
+        $link = mysqli_connect ($host, $user, $password, $database);
+        $result = mysqli_query($link, "SELECT * FROM `jeans`");
+        $number = mysqli_query($link, "SELECT count(id) FROM `jeans`");
+        $ids = [];
+        $titles = [];
+        $imgs = [];
+        $texts = [];
+        $prices = [];
+        $i = 0;
+        while($jeans = mysqli_fetch_assoc($result)) 
+        {
+            $ids[$i] = $jeans['id'];
+            $titles[$i] = $jeans['title'];
+            $imgs[$i] = $jeans['img'];
+            $texts[$i] = $jeans['text'];
+            $prices[$i] = $jeans['price'];
+            $i = $i + 1;
+        }
+    ?>
     <header>
         <div class="menu">
             <div class="burger-cont">
@@ -94,66 +118,18 @@
             </div>
         </div>
         <div class="assortments">
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j1" data-color="sixth" data-collection="casual">
-                <img src="./img/jeans/1.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Blue jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">80</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j2" data-color="third" data-collection="casual">
-                <img src="./img/jeans/2.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Daring jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">55</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j3" data-color="first" data-collection="casual">
-                <img src="./img/jeans/3.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Spring jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">140</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j4" data-color="first" data-collection="petite">
-                <img src="./img/jeans/4.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Funny jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">35</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j5" data-color="first" data-collection="petite">
-                <img src="./img/jeans/5.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_long-girl">
-                <p class="assortments-unit__name">Sexy jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">250</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j6" data-color="fifth" data-collection="petite">
-                <img src="./img/jeans/6.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Cute jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">110</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j7" data-color="sixth" data-collection="soulluxe">
-                <img src="./img/jeans/7.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Nice jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">90</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j8"  data-color="fifth" data-collection="soulluxe">
-                <img src="./img/jeans/8.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Lovely jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">70</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: jb" data-color="second" data-collection="soulluxe">
-                <img src="./img/jeans/9.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_from1100px">
-                <p class="assortments-unit__name">Dark blue jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">0</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j7" data-color="sixth" data-collection="soulluxe">
-                <img src="./img/jeans/10.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Wow jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">155</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j8"  data-color="fifth" data-collection="soulluxe">
-                <img src="./img/jeans/11.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Light jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">85</span></p>
-            </a>
-            <a href="./jeans-item.html" class="assortments-unit wow fadeInUp" style="grid-area: jb" data-color="second" data-collection="soulluxe">
-                <img src="./img/jeans/12.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_from1100px">
-                <p class="assortments-unit__name">Gentle jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">225</span></p>
-            </a>
+            <?php
+                $i = 0;
+                while ($i < count($titles)) {
+                    echo
+                    '<a href="./jeans-item.php" class="assortments-unit wow fadeInUp">
+                        <img src="' . $imgs[$i] . '" alt="girl in jeans" class="assortments-unit__image">
+                        <p class="assortments-unit__name"> ' . $titles[$i] . ' </p>
+                        <p class="assortments-unit__price">$ <span class="assortments-unit__price_number"> ' . $prices[$i] . ' </span></p>
+                    </a>';
+                    $i = $i + 1;
+                }
+            ?>
         </div>
         <div class="no-products">
             <p class="no-products__name">
@@ -161,7 +137,7 @@
             </p>
         </div>
         <div class="all-products">
-            <p class="all-products__name"> Number of products per page initially : 12 </p>
+            <p class="all-products__name"> Number of products per page initially : <?php echo count($ids) ?> </p>
         </div>
     </main>
     <footer class="footer">

@@ -3,12 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/overalls.css">
+    <link rel="stylesheet" href="style/jackets.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="print" href="./style/print.css">
-    <title>Denim - Jacket</title>
+    <link rel="stylesheet" type="text/css" href="./wow-animation/animate.min.css">
+    <title>Denim - Bestsellers</title>
 </head>
 <body>
+    <?php
+        $host = 'std-mysql';
+        $database = 'std_931';
+        $password = '12345678';
+        $user = 'std_931';
+        $link = mysqli_connect ($host, $user, $password, $database);
+        $result = mysqli_query($link, "SELECT * FROM `bestsellers`");
+        $number = mysqli_query($link, "SELECT count(id) FROM `bestsellers`");
+        $ids = [];
+        $titles = [];
+        $imgs = [];
+        $texts = [];
+        $prices = [];
+        $i = 0;
+        while($bestsellers = mysqli_fetch_assoc($result)) 
+        {
+            $ids[$i] = $bestsellers['id'];
+            $titles[$i] = $bestsellers['title'];
+            $imgs[$i] = $bestsellers['img'];
+            $texts[$i] = $bestsellers['text'];
+            $prices[$i] = $bestsellers['price'];
+            $i = $i + 1;
+        }
+    ?>
     <header>
         <div class="menu">
             <div class="burger-cont">
@@ -37,52 +61,83 @@
                 </a></li>
             </ul>
         </div>
+        <div class="main">
+            <div class="title">
+                <ul class="bread-crumb">
+                    <li class="bread-crumb__unit bread-crumb__unit_delete"><a href="./index.html" class="bread-crumb__link">All categories</a></li>
+                    <li class="bread-crumb__unit bread-crumb__unit_delete">/</li>
+                    <li class="bread-crumb__unit"><a href="./new.html" class="bread-crumb__link">New</a></li>
+                    <li class="bread-crumb__unit">/</li>
+                    <li class="bread-crumb__unit"><a href="#" class="bread-crumb__link bread-crumb__link_active">Bestsellers</a></li>
+                </ul>
+                <div class="title__name">Denim Collection</div>
+            </div>
+            <div class="philosophy">
+                <img src="./img/philosophy.jpg" alt="надпись we see what we want" class="philosophy__image">
+            </div>
+        </div>
     </header>
     <main>
-        <div class="product">
-            <div class="photos">
-                <div class="slider">
-                    <div class="slider-main-photo">
-                        <img src="./img/overalls1.jpg" alt="main photo" class="slider-main-photo__image">
-                    </div>
-                </div>
+        <div class="filter-container">
+            <div class="filter">
+                <p class="filter__name">Filter by</p>
+                <svg class="filter__tick" width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L9 9L17 1" stroke="#151C22" stroke-width="2"/>
+                </svg>                    
             </div>
-            <div class="characteristic">
-                <h2 class="characteristic__name">
-                    Overalls
-                </h2>
-                <p class="characteristic__caption">
-                    Overalls in washed organic cotton denim. Collar, button fly, and adjustable belt at waist. Chest pockets with flap. Long, gently flared sleeves and straight legs with front pockets and back pockets.
-                </p>
-                <div class="colors">
-                    <h3 class="colors__name">
-                        Color
-                    </h3>
-                    <div class="colors-set">
-                        <a href="#" class="colors-set__unit colors-set__unit_first"></a>
-                        <a href="#" class="colors-set__unit colors-set__unit_second"></a>
-                        <a href="#" class="colors-set__unit colors-set__unit_third"></a>
+            <div class="filter-cont">
+                <ul class="filter-nav">
+                    <li class="filter-nav__unit filter-nav__unit_clear-all"><a href="#" class="filter-nav__link filter-nav__link_clear-all">Clear all</a></li>
+                    <li class="filter-nav__unit filter-nav__unit_name">Filter</li>
+                    <li class="filter-nav__unit filter-nav__unit_close"><a href="#" class="filter-nav__link filter-nav__link_close">Close</a></li>
+                </ul>
+                <div class="filter-characteristics filter-characteristics-price">
+                    <div class="filter-characteristics-cont filter-characteristics-price-cont">
+                        <h3 class="filter-characteristics-cont__name">Price</h3>
+                        <svg class="filter-characteristics-price__tick" width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L9 9L17 1" stroke="#151C22" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="price-inside price-none">
+                        <p class="filter-characteristics-price__description">From</p>
+                        <input class="filter-characteristics-price__range filter-characteristics-price__range_from" type="range" min="0" max="160" step="1" value="40">
+                        <p class="filter-characteristics-price__price">$ <span class="filter-characteristics-price__price_number-from">40</span></p>
+                        <p class="filter-characteristics-price__description">After</p>
+                        <input class="filter-characteristics-price__range filter-characteristics-price__range_to" type="range" min="35" max="250" step="1" value="240">
+                        <p class="filter-characteristics-price__price">$ <span class="filter-characteristics-price__price_number-to">240</span></p>
                     </div>
                 </div>
-                <div class="sizes">
-                    <h3 class="sizes__name">
-                        Size
-                    </h3>
-                    <ul class="sizes-set">
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_xs">XS</a></li>
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_s sizes-set__link_active">S</a></li>
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_m">M</a></li>
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_l">L</a></li>
-                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_xl">XL</a></li>
-                    </ul>
-                </div>
-                <p class="characteristic__price">
-                    $ 160
-                </p>
-                <a class="characteristic__button">
-                    Add to cart
+                <a href="#" class="filter__button">
+                    Apply
                 </a>
+                <p class="filter__button-more768px">
+                    <a href="#" class="filter__button-more768px_link">
+                        Clear all
+                    </a>
+                </p>
             </div>
+        </div>
+        <div class="assortments">
+            <?php
+                $i = 0;
+                while ($i < count($titles)) {
+                    echo
+                    '<a href="./bestsellers-item.php" class="assortments-unit wow fadeInUp">
+                        <img src="' . $imgs[$i] . '" alt="girl in jeans" class="assortments-unit__image">
+                        <p class="assortments-unit__name"> ' . $titles[$i] . ' </p>
+                        <p class="assortments-unit__price">$ <span class="assortments-unit__price_number"> ' . $prices[$i] . ' </span></p>
+                    </a>';
+                    $i = $i + 1;
+                }
+            ?>
+        </div>
+        <div class="no-products">
+            <p class="no-products__name">
+                No appropriate products
+            </p>
+        </div>
+        <div class="all-products">
+            <p class="all-products__name"> Number of products per page initially : <?php echo count($ids) ?> </p>
         </div>
     </main>
     <footer class="footer">
@@ -118,6 +173,10 @@
         </div>
     </footer>
     <script src="./scripts/burger.js"></script>
-    <script src="./scripts/item.js"></script>
+    <script src="./scripts/filter.js"></script>
+    <script src="./wow-animation/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>

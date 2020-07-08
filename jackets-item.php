@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/jackets.css">
+    <link rel="stylesheet" href="./style/overalls.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./wow-animation/animate.min.css">
-    <title>Denim - New collection</title>
+    <!-- <link rel="stylesheet" type="text/css" media="print" href="./style/print.css"> -->
+    <title>Denim - Jacket</title>
 </head>
 <body>
+    <?php
+        $id = $_GET['id'];
+        $host = 'std-mysql';
+        $database = 'std_931';
+        $password = '12345678';
+        $user = 'std_931';
+        $link = mysqli_connect ($host, $user, $password, $database);
+        if ($link == true) {
+            echo "соединение с бд установлено, мадам";
+        } else {
+            echo "о5 где-то проеб";
+        }
+        $result = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM `jackets` WHERE id='$id'"));
+    ?>
     <header>
         <div class="menu">
             <div class="burger-cont">
@@ -37,121 +51,52 @@
                 </a></li>
             </ul>
         </div>
-        <div class="main">
-            <div class="title">
-                <ul class="bread-crumb">
-                    <li class="bread-crumb__unit bread-crumb__unit_delete"><a href="./index.html" class="bread-crumb__link">All categories</a></li>
-                    <li class="bread-crumb__unit bread-crumb__unit_delete">/</li>
-                    <li class="bread-crumb__unit"><a href="./new.html" class="bread-crumb__link">New</a></li>
-                    <li class="bread-crumb__unit">/</li>
-                    <li class="bread-crumb__unit"><a href="#" class="bread-crumb__link bread-crumb__link_active">New collection</a></li>
-                </ul>
-                <div class="title__name">Denim Collection</div>
-            </div>
-            <div class="philosophy">
-                <img src="./img/philosophy.jpg" alt="надпись we see what we want" class="philosophy__image">
-            </div>
-        </div>
     </header>
     <main>
-        <div class="filter-container">
-            <div class="filter">
-                <p class="filter__name">Filter by</p>
-                <svg class="filter__tick" width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L9 9L17 1" stroke="#151C22" stroke-width="2"/>
-                </svg>                    
-            </div>
-            <div class="filter-cont">
-                <ul class="filter-nav">
-                    <li class="filter-nav__unit filter-nav__unit_clear-all"><a href="#" class="filter-nav__link filter-nav__link_clear-all">Clear all</a></li>
-                    <li class="filter-nav__unit filter-nav__unit_name">Filter</li>
-                    <li class="filter-nav__unit filter-nav__unit_close"><a href="#" class="filter-nav__link filter-nav__link_close">Close</a></li>
-                </ul>
-                <div class="filter-characteristics filter-characteristics-price">
-                    <div class="filter-characteristics-cont filter-characteristics-price-cont">
-                        <h3 class="filter-characteristics-cont__name">Price</h3>
-                        <svg class="filter-characteristics-price__tick" width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L9 9L17 1" stroke="#151C22" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="price-inside price-none">
-                        <p class="filter-characteristics-price__description">From</p>
-                        <input class="filter-characteristics-price__range filter-characteristics-price__range_from" type="range" min="0" max="160" step="1" value="40">
-                        <p class="filter-characteristics-price__price">$ <span class="filter-characteristics-price__price_number-from">40</span></p>
-                        <p class="filter-characteristics-price__description">After</p>
-                        <input class="filter-characteristics-price__range filter-characteristics-price__range_to" type="range" min="35" max="250" step="1" value="240">
-                        <p class="filter-characteristics-price__price">$ <span class="filter-characteristics-price__price_number-to">240</span></p>
+        <div class="product">
+            <div class="photos">
+                <div class="slider">
+                    <div class="slider-main-photo">
+                        <img src="<?= $result['img'] ?>" alt="main photo" class="slider-main-photo__image">
                     </div>
                 </div>
-                <a href="#" class="filter__button">
-                    Apply
-                </a>
-                <p class="filter__button-more768px">
-                    <a href="#" class="filter__button-more768px_link">
-                        Clear all
-                    </a>
-                </p>
             </div>
-        </div>
-        <div class="assortments">
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j1" data-color="sixth" data-collection="casual">
-                <img src="./img/new-collection/1.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Spring jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">50</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j2" data-color="third" data-collection="casual">
-                <img src="./img/new-collection/2.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Light jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">110</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j3" data-color="first" data-collection="casual">
-                <img src="./img/new-collection/3.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Wow jacket</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">85</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j4" data-color="first" data-collection="petite">
-                <img src="./img/new-collection/4.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Gentle overalls</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">110</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j5" data-color="first" data-collection="petite">
-                <img src="./img/new-collection/5.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_long-girl">
-                <p class="assortments-unit__name">Blue shirt</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">50</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j6" data-color="fifth" data-collection="petite">
-                <img src="./img/new-collection/6.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Nice overalls</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">65</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j7" data-color="sixth" data-collection="soulluxe">
-                <img src="./img/new-collection/7.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Lovely overalls</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">70</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: j8"  data-color="fifth" data-collection="soulluxe">
-                <img src="./img/new-collection/8.jpg" alt="girl in jeans" class="assortments-unit__image">
-                <p class="assortments-unit__name">Spring jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">140</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: jb" data-color="second" data-collection="soulluxe">
-                <img src="./img/new-collection/9.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_from1100px">
-                <p class="assortments-unit__name">Sexy jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">250</span></p>
-            </a>
-            <a href="./new-collection-item.html" class="assortments-unit wow fadeInUp" style="grid-area: jb" data-color="second" data-collection="soulluxe">
-                <img src="./img/new-collection/10.jpg" alt="girl in jeans" class="assortments-unit__image assortments-unit__image_from1100px">
-                <p class="assortments-unit__name">Cute jeans</p>
-                <p class="assortments-unit__price">$ <span class="assortments-unit__price_number">110</span></p>
-            </a>
-        </div>
-        <div class="no-products">
-            <p class="no-products__name">
-                No appropriate products
-            </p>
-        </div>
-        <div class="all-products">
-            <p class="all-products__name"> Number of products per page initially : 10 </p>
+            <div class="characteristic">
+                <h2 class="characteristic__name">
+                    <?= $result['title'] ?>
+                </h2>
+                <p class="characteristic__caption">
+                    <?= $result['text'] ?>
+                </p>
+                <div class="colors">
+                    <h3 class="colors__name">
+                        Color
+                    </h3>
+                    <div class="colors-set">
+                        <a href="#" class="colors-set__unit colors-set__unit_first"></a>
+                        <a href="#" class="colors-set__unit colors-set__unit_second"></a>
+                        <a href="#" class="colors-set__unit colors-set__unit_third"></a>
+                    </div>
+                </div>
+                <div class="sizes">
+                    <h3 class="sizes__name">
+                        Size
+                    </h3>
+                    <ul class="sizes-set">
+                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_xs">XS</a></li>
+                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_s sizes-set__link_active">S</a></li>
+                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_m">M</a></li>
+                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_l">L</a></li>
+                        <li class="sizes-set__unit"><a href="#" class="sizes-set__link sizes-set__link_xl">XL</a></li>
+                    </ul>
+                </div>
+                <p class="characteristic__price">
+                    $ <?= $result['price'] ?>
+                </p>
+                <a class="characteristic__button">
+                    Add to cart
+                </a>
+            </div>
         </div>
     </main>
     <footer class="footer">
@@ -187,10 +132,6 @@
         </div>
     </footer>
     <script src="./scripts/burger.js"></script>
-    <script src="./scripts/filter.js"></script>
-    <script src="./wow-animation/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
+    <script src="./scripts/item.js"></script>
 </body>
 </html>
