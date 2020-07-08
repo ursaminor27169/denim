@@ -30,7 +30,7 @@
                 <li class="catalog__unit"><a class="catalog__link" href="/man.html">Man</a></li>
                 <li class="catalog__unit"><a class="catalog__link" href="/new.html">New</a></li>
             </ul>
-            <a href="index.html" class="logo">
+            <a href="/index.html" class="logo">
                 Nimes
             </a>
             <ul class="purchases">

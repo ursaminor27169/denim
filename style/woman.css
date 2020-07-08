@@ -66,12 +66,13 @@ main {
   main .catalog {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 70px 250px; }
+    padding: 50px; }
     main .catalog-item {
-      display: block; }
+      display: block;
+      margin-bottom: 20px; }
       main .catalog-item-main {
         z-index: 10;
         position: absolute;
@@ -156,7 +157,10 @@ footer {
     footer .social-networks__unit:hover svg path {
       fill: rgba(255, 255, 255, 0.623); }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
+  main .catalog {
+    flex-direction: row; }
+
   footer {
     align-items: center; }
     footer .sections {
