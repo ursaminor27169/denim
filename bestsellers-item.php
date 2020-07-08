@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/overalls.css">
+    <link rel="stylesheet" href="/style/overalls.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="print" href="./style/print.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/style/print.css">
     <title>Denim - Bestseller</title>
 </head>
 <body>
+    <?php
+        $id = $_GET['id'];
+        $host = 'std-mysql';
+        $database = 'std_931';
+        $password = '12345678';
+        $user = 'std_931';
+        $link = mysqli_connect ($host, $user, $password, $database);
+        $result = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM `bestsellers` WHERE id='$id'"));
+    ?>
     <header>
         <div class="menu">
             <div class="burger-cont">
@@ -17,9 +26,9 @@
                 </div>
             </div>
             <ul class="catalog">
-                <li class="catalog__unit"><a class="catalog__link" href="./woman.html">Woman</a></li>
-                <li class="catalog__unit"><a class="catalog__link" href="./man.html">Man</a></li>
-                <li class="catalog__unit"><a class="catalog__link" href="./new.html">New</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/woman.html">Woman</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/man.html">Man</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/new.html">New</a></li>
             </ul>
             <a href="index.html" class="logo">
                 Nimes
@@ -43,16 +52,16 @@
             <div class="photos">
                 <div class="slider">
                     <div class="slider-main-photo">
-                        <img src="./img/overalls1.jpg" alt="main photo" class="slider-main-photo__image">
+                        <img src="<?= $result['img'] ?>" alt="main photo" class="slider-main-photo__image">
                     </div>
                 </div>
             </div>
             <div class="characteristic">
                 <h2 class="characteristic__name">
-                    Overalls
+                    <?= $result['title'] ?>
                 </h2>
                 <p class="characteristic__caption">
-                    Overalls in washed organic cotton denim. Collar, button fly, and adjustable belt at waist. Chest pockets with flap. Long, gently flared sleeves and straight legs with front pockets and back pockets.
+                    <?= $result['text'] ?>
                 </p>
                 <div class="colors">
                     <h3 class="colors__name">
@@ -77,7 +86,7 @@
                     </ul>
                 </div>
                 <p class="characteristic__price">
-                    $ 160
+                    $ <?= $result['price'] ?>
                 </p>
                 <a class="characteristic__button">
                     Add to cart
@@ -88,11 +97,11 @@
     <footer class="footer">
         <div class="sections">
             <a href="index.html" class="sections__name">Nimes</a>
-            <a href="./index.html" class="sections__unit_shop">Shop</a>
-            <a href="./index.html" class="sections__unit_delivery">Delivery</a>
-            <a href="./index.html" class="sections__unit_service">Service</a>
-            <a href="./index.html" class="sections__unit_sitemap">Sitemap</a>
-            <a href="./index.html" class="sections__unit_contacts">Contacts</a>
+            <a href="/index.html" class="sections__unit_shop">Shop</a>
+            <a href="/index.html" class="sections__unit_delivery">Delivery</a>
+            <a href="/index.html" class="sections__unit_service">Service</a>
+            <a href="/index.html" class="sections__unit_sitemap">Sitemap</a>
+            <a href="/index.html" class="sections__unit_contacts">Contacts</a>
         </div>
         <div class="social-networks">
             <a href="https://www.facebook.com/" class="social-networks__unit">
@@ -117,7 +126,7 @@
             </a>
         </div>
     </footer>
-    <script src="./scripts/burger.js"></script>
-    <script src="./scripts/item.js"></script>
+    <script src="/scripts/burger.js"></script>
+    <script src="/scripts/item.js"></script>
 </body>
 </html>

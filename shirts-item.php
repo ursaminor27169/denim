@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/overalls.css">
+    <link rel="stylesheet" href="/style/overalls.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="print" href="./style/print.css">
     <title>Denim - Shirt</title>
 </head>
 <body>
+    <?php
+        $id = $_GET['id'];
+        $host = 'std-mysql';
+        $database = 'std_931';
+        $password = '12345678';
+        $user = 'std_931';
+        $link = mysqli_connect ($host, $user, $password, $database);
+        $result = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM `shirts` WHERE id='$id'"));
+    ?>
     <header>
         <div class="menu">
             <div class="burger-cont">
@@ -43,16 +52,16 @@
             <div class="photos">
                 <div class="slider">
                     <div class="slider-main-photo">
-                        <img src="./img/overalls1.jpg" alt="main photo" class="slider-main-photo__image">
+                        <img src="<?= $result['img'] ?>" alt="main photo" class="slider-main-photo__image">
                     </div>
                 </div>
             </div>
             <div class="characteristic">
                 <h2 class="characteristic__name">
-                    Overalls
+                    <?= $result['title'] ?>
                 </h2>
                 <p class="characteristic__caption">
-                    Overalls in washed organic cotton denim. Collar, button fly, and adjustable belt at waist. Chest pockets with flap. Long, gently flared sleeves and straight legs with front pockets and back pockets.
+                    <?= $result['text'] ?>
                 </p>
                 <div class="colors">
                     <h3 class="colors__name">
@@ -77,7 +86,7 @@
                     </ul>
                 </div>
                 <p class="characteristic__price">
-                    $ 160
+                    $ <?= $result['price'] ?>
                 </p>
                 <a class="characteristic__button">
                     Add to cart

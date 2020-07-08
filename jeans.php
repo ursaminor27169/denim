@@ -122,7 +122,7 @@
                 $i = 0;
                 while ($i < count($titles)) {
                     echo
-                    '<a href="./jeans-item.php" class="assortments-unit wow fadeInUp">
+                    '<a href="jeans-item.php/?id='. $ids[$i] .'" class="assortments-unit wow fadeInUp">
                         <img src="' . $imgs[$i] . '" alt="girl in jeans" class="assortments-unit__image">
                         <p class="assortments-unit__name"> ' . $titles[$i] . ' </p>
                         <p class="assortments-unit__price">$ <span class="assortments-unit__price_number"> ' . $prices[$i] . ' </span></p>

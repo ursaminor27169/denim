@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/jackets.css">
+    <link rel="stylesheet" href="/style/jackets.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./wow-animation/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/wow-animation/animate.min.css">
     <title>Denim - Bestsellers</title>
 </head>
 <body>
@@ -41,9 +41,9 @@
                 </div>
             </div>
             <ul class="catalog">
-                <li class="catalog__unit"><a class="catalog__link" href="./woman.html">Woman</a></li>
-                <li class="catalog__unit"><a class="catalog__link" href="./man.html">Man</a></li>
-                <li class="catalog__unit"><a class="catalog__link" href="./new.html">New</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/woman.html">Woman</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/man.html">Man</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/new.html">New</a></li>
             </ul>
             <a href="index.html" class="logo">
                 Nimes
@@ -64,16 +64,16 @@
         <div class="main">
             <div class="title">
                 <ul class="bread-crumb">
-                    <li class="bread-crumb__unit bread-crumb__unit_delete"><a href="./index.html" class="bread-crumb__link">All categories</a></li>
+                    <li class="bread-crumb__unit bread-crumb__unit_delete"><a href="/index.html" class="bread-crumb__link">All categories</a></li>
                     <li class="bread-crumb__unit bread-crumb__unit_delete">/</li>
-                    <li class="bread-crumb__unit"><a href="./new.html" class="bread-crumb__link">New</a></li>
+                    <li class="bread-crumb__unit"><a href="/new.html" class="bread-crumb__link">New</a></li>
                     <li class="bread-crumb__unit">/</li>
                     <li class="bread-crumb__unit"><a href="#" class="bread-crumb__link bread-crumb__link_active">Bestsellers</a></li>
                 </ul>
                 <div class="title__name">Denim Collection</div>
             </div>
             <div class="philosophy">
-                <img src="./img/philosophy.jpg" alt="надпись we see what we want" class="philosophy__image">
+                <img src="/img/philosophy.jpg" alt="надпись we see what we want" class="philosophy__image">
             </div>
         </div>
     </header>
@@ -122,7 +122,7 @@
                 $i = 0;
                 while ($i < count($titles)) {
                     echo
-                    '<a href="./bestsellers-item.php" class="assortments-unit wow fadeInUp">
+                    '<a href="/bestsellers-item.php/?id='. $ids[$i] .'" class="assortments-unit wow fadeInUp">
                         <img src="' . $imgs[$i] . '" alt="girl in jeans" class="assortments-unit__image">
                         <p class="assortments-unit__name"> ' . $titles[$i] . ' </p>
                         <p class="assortments-unit__price">$ <span class="assortments-unit__price_number"> ' . $prices[$i] . ' </span></p>
@@ -143,11 +143,11 @@
     <footer class="footer">
         <div class="sections">
             <a href="index.html" class="sections__name">Nimes</a>
-            <a href="./index.html" class="sections__unit_shop">Shop</a>
-            <a href="./index.html" class="sections__unit_delivery">Delivery</a>
-            <a href="./index.html" class="sections__unit_service">Service</a>
-            <a href="./index.html" class="sections__unit_sitemap">Sitemap</a>
-            <a href="./index.html" class="sections__unit_contacts">Contacts</a>
+            <a href="/index.html" class="sections__unit_shop">Shop</a>
+            <a href="/index.html" class="sections__unit_delivery">Delivery</a>
+            <a href="/index.html" class="sections__unit_service">Service</a>
+            <a href="/index.html" class="sections__unit_sitemap">Sitemap</a>
+            <a href="/index.html" class="sections__unit_contacts">Contacts</a>
         </div>
         <div class="social-networks">
             <a href="https://www.facebook.com/" class="social-networks__unit">
@@ -172,9 +172,9 @@
             </a>
         </div>
     </footer>
-    <script src="./scripts/burger.js"></script>
-    <script src="./scripts/filter.js"></script>
-    <script src="./wow-animation/wow.min.js"></script>
+    <script src="/scripts/burger.js"></script>
+    <script src="/scripts/filter.js"></script>
+    <script src="/wow-animation/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>

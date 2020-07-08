@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/overalls.css">
+    <link href="/style/overalls.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" media="print" href="./style/print.css"> -->
+    <link rel="stylesheet" type="text/css" media="print" href="/style/print.css">
     <title>Denim - Jacket</title>
 </head>
 <body>
@@ -16,11 +16,6 @@
         $password = '12345678';
         $user = 'std_931';
         $link = mysqli_connect ($host, $user, $password, $database);
-        if ($link == true) {
-            echo "соединение с бд установлено, мадам";
-        } else {
-            echo "о5 где-то проеб";
-        }
         $result = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM `jackets` WHERE id='$id'"));
     ?>
     <header>
@@ -31,9 +26,9 @@
                 </div>
             </div>
             <ul class="catalog">
-                <li class="catalog__unit"><a class="catalog__link" href="./woman.html">Woman</a></li>
-                <li class="catalog__unit"><a class="catalog__link" href="./man.html">Man</a></li>
-                <li class="catalog__unit"><a class="catalog__link" href="./new.html">New</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/woman.html">Woman</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/man.html">Man</a></li>
+                <li class="catalog__unit"><a class="catalog__link" href="/new.html">New</a></li>
             </ul>
             <a href="index.html" class="logo">
                 Nimes
@@ -102,11 +97,11 @@
     <footer class="footer">
         <div class="sections">
             <a href="index.html" class="sections__name">Nimes</a>
-            <a href="./index.html" class="sections__unit_shop">Shop</a>
-            <a href="./index.html" class="sections__unit_delivery">Delivery</a>
-            <a href="./index.html" class="sections__unit_service">Service</a>
-            <a href="./index.html" class="sections__unit_sitemap">Sitemap</a>
-            <a href="./index.html" class="sections__unit_contacts">Contacts</a>
+            <a href="/index.html" class="sections__unit_shop">Shop</a>
+            <a href="/index.html" class="sections__unit_delivery">Delivery</a>
+            <a href="/index.html" class="sections__unit_service">Service</a>
+            <a href="/index.html" class="sections__unit_sitemap">Sitemap</a>
+            <a href="/index.html" class="sections__unit_contacts">Contacts</a>
         </div>
         <div class="social-networks">
             <a href="https://www.facebook.com/" class="social-networks__unit">
@@ -131,7 +126,7 @@
             </a>
         </div>
     </footer>
-    <script src="./scripts/burger.js"></script>
-    <script src="./scripts/item.js"></script>
+    <script src="/scripts/burger.js"></script>
+    <script src="/scripts/item.js"></script>
 </body>
 </html>
