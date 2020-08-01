@@ -100,10 +100,10 @@
                     </div>
                     <div class="price-inside price-none">
                         <p class="filter-characteristics-price__description">From</p>
-                        <input class="filter-characteristics-price__range filter-characteristics-price__range_from" type="range" min="0" max="160" step="1" value="40">
+                        <input class="filter-characteristics-price__range filter-characteristics-price__range_from" type="range" min="0" max="125" step="1" value="40">
                         <p class="filter-characteristics-price__price">$ <span class="filter-characteristics-price__price_number-from">40</span></p>
                         <p class="filter-characteristics-price__description">After</p>
-                        <input class="filter-characteristics-price__range filter-characteristics-price__range_to" type="range" min="35" max="250" step="1" value="240">
+                        <input class="filter-characteristics-price__range filter-characteristics-price__range_to" type="range" min="125" max="250" step="1" value="240">
                         <p class="filter-characteristics-price__price">$ <span class="filter-characteristics-price__price_number-to">240</span></p>
                     </div>
                 </div>

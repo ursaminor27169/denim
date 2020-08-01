@@ -25,6 +25,7 @@ var assortmentsFour = document.querySelectorAll('.assortments-four');
 var numberOfElements = document.querySelector('.load-more__name_number');
 var lineOfLoad = document.querySelector('.load-more__name_line');
 var numberOfItems = document.querySelector('.all-products__name-number');
+var kolP = 0;
 
 //открытие-закрытие фильтра
 
@@ -63,11 +64,14 @@ rangeTo.oninput = function() {
 //функция отбора
 
 var applyFunction = function() {
+    var kolP = parseInt(assortments.length,10);
     for (var i = 0; i < assortments.length; i++) {
         if ((parseInt(prices[i].textContent,10) > dataNumberFrom) && (parseInt(prices[i].textContent,10) < dataNumberTo)) {
             assortments[i].classList.remove('assortments-none');
         } else {
             assortments[i].classList.add('assortments-none');
+            kolP = kolP - 1;
+            console.log(kolP);
         }
     }
 }
@@ -80,22 +84,17 @@ var clearAllFunction = function() {
     rangeTo.value = 250;
     pNumberFrom.textContent = 0;
     pNumberTo.textContent = 250;
-    
 }
 
-//вывод надписи "no-products"
+//вывод надписи "No appropriate products"
 
-var showNoProducts = function() {
-    var sumAssortmentsNone = 0;
-    for (var i = 0; i < assortments.length; i++) {
-        if (assortments[i].classList.contains('assortments-none')) {
-            sumAssortmentsNone++
-        }
-    }
-    if (sumAssortmentsNone == numberOfItems.textContent) {
+var noProductsFunction = function() {
+    if (kolP == 0) {
         noProducts.classList.add('no-products-show');
+        console.log('1');
     } else {
         noProducts.classList.remove('no-products-show');
+        console.log('2');
     }
 }
 
@@ -104,24 +103,24 @@ var showNoProducts = function() {
 apply.onclick = function(evt) {
     evt.preventDefault();
     applyFunction();
-    showNoProducts();
     filterContainer.classList.toggle('filter-container-open');
     if (document.documentElement.clientWidth > 768) {
         window.scrollTo(0,250);
     }
+    noProductsFunction();
 }
 
 clearAll.onclick = function(evt) {
     evt.preventDefault();
     clearAllFunction();
-    showNoProducts();
     filterContainer.classList.toggle('filter-container-open');
     window.scrollTo(0,250);
+    noProductsFunction();
 }
 
 clearAllMin.onclick = function(evt) {
     evt.preventDefault();
     clearAllFunction();
-    showNoProducts();
     filterContainer.classList.toggle('filter-container-open');
+    noProductsFunction();
 }
